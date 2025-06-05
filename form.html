@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+</head>
+<style>
+        body {
+            background-color: pink;
+            background-size: cover ;
+            padding: 20px ;
+        }
+
+        h1 {
+            font-size: 40px;
+            color: blue;
+            text-align: center;
+        }
+
+        h2, h3, h4 {
+            text-align: center;
+            color: black;
+        }
+        
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 15px;
+            width: 500px;
+            margin-left: 450px;
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        input, select{
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+        
+        
+
+        #submit {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: blue;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+</style>
+<body>
+    <marquee><h1><b>ZOHO</b></h1></marquee>
+    <hr>
+    <h1>ZOHO CAREER</h1>
+    <hr>
+    <form id="zoho career">
+        <label for="name">APPLICANT NAME: </label>
+        <input type="text" id="name" name="name" placeholder="ENTER YOUR NAME" required>
+        <label for="email">EMAIL ID: </label>
+        <input type="email" id="email" name="email" placeholder="EMAIL ID" required>
+        <label for="password">PASSWORD: </label>
+        <input type="text" id="password" name="password" placeholder="PASSWORD" required>
+        <label for="date">DOB:</label>
+        <input type="date" id="dob" name="dob" dob="yyyy-mm-dd" max="2005-12-31" required>
+        <label for="gender">GENDER :</label>
+
+        <label for="male">MALE</label>
+        <input type="radio" name="gender" value="male" id="male" >
+        <label for="female">FEMALE</label>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="transgender">TRANSGENDER</label>
+        <input type="radio" id="transgender" name="gender" value="transgender">
+        <label for="work"> JOB :</label><br><br>
+        <label for="software">SOFTWARE DEVELOPER</label>
+        <input type="checkbox" name="work" value="software developer" id="software">
+        <label for="content">CONTENT WRITER</label>
+        <input type="checkbox" id="content" name="work" value="conetent writer">
+        <label for="data">JUNIOR DATA ANALYST</label>
+        <input type="checkbox" id="DATA" name="work" value="JUNIOR DATA ANALYST"><br>
+       <label for="degree">QUALIFICATION: </label>
+<select>
+    <option value="option 1">SELECT COURSE</option>
+    <option value="option 2">BCA</option>
+    <option value="option 3">B.E.(CS)</option>
+    <option value="option 4">Bsc(cs)</option>
+    <option value="option 5">BCOM(ISM)</option>
+    <option value="option 6">BCOM(CA)</option>
+</select>
+ <label for="pass">PASSOUT:</label>
+        <input type="date" id="passout" placeholder="yyyy-mm-dd" min="2022-01-01" max="2025-05-31" > 
+        <label for="file"  >UPLOAD RESUME: </label>
+        <input type="file" id="file" name="resume" placeholder="upload file">
+        <label for="skill">SKILLS</label>
+        <input type="search" id="search" placeholder="search here skills" name="skills">
+        <label for="experience">EXPERIENCE: </label>
+        <input type="number" id="experience" name="experience" placeholder="EXPERIENCE" default="0" value="experience" min="0" max="6" required>
+        <label for="audio">project audio file</label>
+        <input type="file" id="audio" name="audio file" accept='audio/*'>
+        <label for="video">project video file</label>
+        <input type="file" id="video" name="video file" accept='video/*'>
+        <label for="reset">RESET YOUR FORM</label>
+        <input type="reset" id="reset">
+        <input type="submit" id="submit">
+    </form>
+</body>
+</html>
