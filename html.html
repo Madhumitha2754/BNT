@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+      <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+      <style>
+    #box {
+      width: 100px;
+      height: 100px;
+      background: teal;
+      position: relative;
+    }
+  </style>
+
+</head>
+<body>
+    
+</body>
+</html>
+  <div id="display">00:00:00</div>
+  <button id="start">Start</button>
+  <button id="stop">Stop</button>
+  <button id="reset">Reset</button>
+
+  <script>
+    let elapsed = 0;
+    let timer = null;  // ← notice here
+    const display = document.getElementById('display');
+
+    const format = ms => {
+      const s = Math.floor(ms / 1000);
+      const h = String(Math.floor(s / 3600)).padStart(2,'0');
+      const m = String(Math.floor(s % 3600 / 60)).padStart(2,'0');
+      const sec = String(s % 60).padStart(2,'0');
+      return `${h}:${m}:${sec}`;
+    };
+
+    document.getElementById('start').onclick = () => {
+      if (timer) return;         
+      const startTime = Date.now() - elapsed;
+      timer = setInterval(() => {
+        elapsed = Date.now() - startTime;
+        display.textContent = format(elapsed);
+      }, 1000);
+    };
+
+    document.getElementById('stop').onclick = () => {
+      if (!timer) return;
+      clearInterval(timer);
+      timer = null;
+    };
+
+    document.getElementById('reset').onclick = () => {
+      clearInterval(timer);
+      timer = null;
+      elapsed = 0;
+      display.textContent = "00:00:00";
+    };
+  </script>
+  <script>
+    function Person(first, last, age) {
+  this.firstName = first;
+  this.lastName = last;
+  this.age = age;
+  this.fullName = function() {
+    return `${this.firstName} ${this.lastName}`;
+  };
+}
+const alice = new Person('Alice', 'Smith', 28);
+console.log(alice.fullName()); // "Alice Smith"
+
+  </script>
+  <script>
+    function divide(a, b) {
+  try {
+    if (b === 0) {
+      throw new Error("Cannot divide by zero");
+    }
+    const result = a / b;
+    console.log("Result:", result);
+    return result;
+  } catch (err) {
+    console.error("Error occurred:", err.message);
+    return null;
+  } finally {
+    console.log("Execution completed");
+  }
+}
+  </script>
+  <script>
+    const numbers = [1, 2, 3, 4, 5];
+const doubled = numbers.map(num => num * 2);
+console.log(doubled); 
+const number = [1, 2, 3, 4, 5, 6];
+const evens = number.filter(num => num % 2 === 0);
+console.log(evens); // [2, 4, 6]
+const n= [1, 2, 3, 4, 5];
+const sum = n.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+console.log(sum);
+</script>
+  <h1 id="title">Welcome!</h1>
+  <p id="message">Click the button to change this text</p>
+  <button id="changeBtn">Change Content</button>
+
+  <script>
+    $(document).ready(function() {
+      $("#changeBtn").click(function() {
+        $("#title").text("Hello Everyone");
+        $("#message").html("<b>Text has been updated using jQuery!</b>");
+        $("#message").css("color", "blue");
+      });
+    });
+  </script>
+<hr>
+<button id="clickBtn">Click Me</button>
+  <p id="hoverPara">Hover over this text</p>
+  <input type="text" id="typeBox" placeholder="Type something here">
+
+  <script>
+    // Click event
+    $("#clickBtn").click(function() {
+      alert("Button was clicked!");
+    });
+
+    // Mouseover event
+    // $("#hoverPara").mouseover(function() {
+    //   alert("You hovered over the paragraph!");
+    // });
+
+    // Keydown event
+    $("#typeBox").keydown(function() {
+      console.log("Key pressed!");
+    });
+  </script>
+   <button id="go">Animate</button>
+  <div id="box"></div>
+
+  <script>
+    $(function() {
+      $('#go').click(function() {
+        $('#box').animate({
+          width: '200px',
+          height: '200px',
+          left: '100px',
+          opacity: 0.5
+        }, 1000, 'swing', function() {
+          console.log('Animation complete!');
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>
